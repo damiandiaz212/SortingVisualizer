@@ -1,28 +1,25 @@
 // Refreshes the canvas's, acts as our update function
-function RefreshBoard() {
-  for (let j = 0; j < sortObjects.length; j++) {
-    let obj = sortObjects[j];
-    let iw = (obj.canvas.width = img.width);
-    let ih = (obj.canvas.height = img.height);
-    let pieceWidth = iw / cols;
-    let pieceHeight = ih / rows;
+function RefreshBoard(obj) {
+  let iw = (obj.canvas.width = img.width);
+  let ih = (obj.canvas.height = img.height);
+  let pieceWidth = iw / cols;
+  let pieceHeight = ih / rows;
 
-    let i = 0;
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        let p = obj.pieces[i++];
-        obj.context.drawImage(
-          img,
-          x * pieceWidth,
-          y * pieceHeight,
-          pieceWidth,
-          pieceHeight,
-          p.col * pieceWidth,
-          p.row * pieceHeight,
-          pieceWidth,
-          pieceHeight
-        );
-      }
+  let i = 0;
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      let p = obj.pieces[i++];
+      obj.context.drawImage(
+        img,
+        x * pieceWidth,
+        y * pieceHeight,
+        pieceWidth,
+        pieceHeight,
+        p.col * pieceWidth,
+        p.row * pieceHeight,
+        pieceWidth,
+        pieceHeight
+      );
     }
   }
 }

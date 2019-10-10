@@ -1,1 +1,2 @@
-"# SortingVisualizer" 
+"# SortingVisualizer"
+open "index.html"
